@@ -2,11 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import ThalexMVPCalculator from './components/ThalexMVPCalculator';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
     <div className="App">
-     <ThalexMVPCalculator />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -21,6 +21,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <ErrorBoundary>
+        <ThalexMVPCalculator />
+      </ErrorBoundary>
     </div>
   );
 }

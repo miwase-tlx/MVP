@@ -114,10 +114,13 @@ const SCENARIOS = {
   };
   
   const ThalexMVPCalculator = () => {
+    console.log('Rendering calculator...');
     const [selectedAsset, setSelectedAsset] = useState('BTC - D1');
     const [selectedScenario, setSelectedScenario] = useState('Base');
     const [baseState, setBaseState] = useState(INITIAL_STATE);
     const [totalRewards] = useState(2050);
+    console.log('Metrics:', metrics); // Add this before the return statement
+
 
 const currentState = SCENARIOS[selectedScenario](baseState);
 
