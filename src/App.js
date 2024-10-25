@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import ThalexMVPCalculator from './components/ThalexMVPCalculator';
@@ -7,7 +7,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -20,7 +20,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
       <ErrorBoundary>
         <ThalexMVPCalculator />
       </ErrorBoundary>

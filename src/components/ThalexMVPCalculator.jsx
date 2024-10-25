@@ -67,6 +67,7 @@ const INITIAL_STATE = {
     }
   }
 };
+
 const SCENARIOS = {
     'Base': (state) => state,
     'Retail growth': (state) => {
@@ -114,15 +115,12 @@ const SCENARIOS = {
   };
   
   const ThalexMVPCalculator = () => {
-    console.log('Rendering calculator...');
     const [selectedAsset, setSelectedAsset] = useState('BTC - D1');
     const [selectedScenario, setSelectedScenario] = useState('Base');
     const [baseState, setBaseState] = useState(INITIAL_STATE);
     const [totalRewards] = useState(2050);
-    console.log('Metrics:', metrics); // Add this before the return statement
 
-
-const currentState = SCENARIOS[selectedScenario](baseState);
+    const currentState = SCENARIOS[selectedScenario](baseState);
 
     const handleFeeChange = (group, type, value) => {
       setBaseState(prev => ({
@@ -220,7 +218,8 @@ const currentState = SCENARIOS[selectedScenario](baseState);
     };
   
     const metrics = calculateMetrics(selectedAsset);
-return (
+
+    return (
         <div className="space-y-4 p-4 bg-gray-50 min-h-screen">
           <Card className="border-t-4 border-t-blue-800">
             <CardHeader className="bg-gradient-to-r from-blue-900 to-blue-800 text-white">
