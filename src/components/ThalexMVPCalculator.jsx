@@ -234,9 +234,9 @@ const SCENARIOS = {
               <CardTitle className="flex justify-between items-start">
                 <div>
                   <span className="text-4xl font-bold">Thalex MVP Calculator</span>
-                  <p className="text-sm font-normal opacity-90 mt-1">
-                    Simulate your expected rewards and net fee rates by entering taker/maker volumes for different customer groups. 
-                    Adjust volumes and fee rates to see how they affect your rewards distribution and effective rates.
+                  <p className="text-xs font-normal opacity-90 mt-1">
+                    <p>Simulate your expected rewards and net fee rates by entering taker/maker volumes for different customer groups.</p>
+                    <p>Adjust volumes and fee rates to see how they affect your rewards distribution and effective rates.</p>
                   </p>
                 </div>
                 <div className="flex items-center space-x-4">
