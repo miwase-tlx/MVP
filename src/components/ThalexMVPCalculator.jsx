@@ -118,8 +118,8 @@ const SCENARIOS = {
   
   const SCENARIO_DESCRIPTIONS = {
     'Base': "Base scenario with current volumes",
-    'Retail-growth': "Shifts 10% of MM volumes to Protail and 20% of MM volumes to Retail traders",
-    'Volume-growth': "Increases all volumes by 40%"
+    'Retail growth': "Shifts 10% of MM volumes to Protail and 20% of MM volumes to Retail traders",
+    'Volume growth': "Increases all volumes by 40%"
   };
   
   const ThalexMVPCalculator = () => {
