@@ -7,9 +7,8 @@ function Footer() {
       padding: '10px',
       borderTop: '1px solid #eee'
     }}>
-      This dashboard displays fictional trading data that can be modified for simulation purposes. 
-      
-      The volumes, calculations, and rewards shown here are for demonstration only and do not represent actual exchange trading data or rewards.
+      <p>This dashboard displays fictional trading data that can be modified for simulation purposes.</p>
+      <p>The volumes, calculations, and rewards shown here are for demonstration only and do not represent actual exchange trading data or rewards.</p>
     </footer>
   );
 }
