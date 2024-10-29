@@ -254,7 +254,7 @@ const SCENARIOS = {
                       type="number"
                       value={totalRewards}
                       disabled
-                      className="border rounded px-2 py-1 w-20 text-right text-black bg-gray-100"
+                      className="border rounded px-2 py-1 w-20 text-center text-black bg-gray-100"
                     />
                   </div>
                 </div>
@@ -355,7 +355,7 @@ const SCENARIOS = {
                   </table>
 
                   <div className="mt-12">
-                    <h3 className="font-bold text-lg text-blue-700 mb-4">Net Fee Rates</h3>
+                    <h3 className="font-bold text-lg text-blue-700 mb-4 text-center">Net Fee Rates</h3>
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="bg-blue-700 text-white">
@@ -367,7 +367,7 @@ const SCENARIOS = {
                       <tbody>
                         {metrics.rows.map((row, idx) => (
                           <tr key={row.group} className={idx % 2 === 0 ? 'bg-white' : 'bg-blue-50'}>
-                            <td className="px-4 py-3 font-medium">{row.group}</td>
+                            <td className="px-4 py-3 font-medium text-center">{row.group}</td>
                             <td className="px-4 py-3 text-center">{row.effectiveTakerRate.toFixed(2)}</td>
                             <td className="px-4 py-3 text-center">{row.effectiveMakerRate.toFixed(2)}</td>
                           </tr>
