@@ -268,6 +268,10 @@ const SCENARIOS = {
                     />
                   </div>
                 </div>
+                <p className="text-sm font-normal opacity-90">
+                  Simulate your expected rewards and net fee rates by entering taker/maker volumes for different customer groups. 
+                  Adjust volumes and fee rates to see how they affect your rewards distribution and effective rates.
+                </p>
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6 pt-8">
