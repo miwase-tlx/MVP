@@ -232,7 +232,13 @@ const SCENARIOS = {
           <Card className="border-t-4 border-t-blue-700">
             <CardHeader className="bg-gradient-to-r from-blue-700 to-blue-700 text-white">
               <CardTitle className="flex justify-between items-center">
-                <span className="text-4xl font-bold">Thalex MVP Calculator</span>
+                <div>
+                  <span className="text-4xl font-bold">Thalex MVP Calculator</span>
+                  <p className="text-sm font-normal opacity-90">
+                    Simulate your expected rewards and net fee rates by entering taker/maker volumes for different customer groups. 
+                    Adjust volumes and fee rates to see how they affect your rewards distribution and effective rates.
+                  </p>
+                </div>
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center space-x-2">
                     <span className="text-sm font-medium">Scenario:</span>
@@ -268,10 +274,6 @@ const SCENARIOS = {
                     />
                   </div>
                 </div>
-                <p className="text-sm font-normal opacity-90">
-                  Simulate your expected rewards and net fee rates by entering taker/maker volumes for different customer groups. 
-                  Adjust volumes and fee rates to see how they affect your rewards distribution and effective rates.
-                </p>
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6 pt-8">
