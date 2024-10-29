@@ -24,7 +24,9 @@ function App() {
       <ErrorBoundary>
         <ThalexMVPCalculator />
       </ErrorBoundary>
-      <p>Testing</p>
+      <p>
+      This dashboard shows indicative volume for each product, for relevant trading days start and stop at 8am UTC. Note that the volumes shown on this page can lag behind actual trading volume, and are for indicative purposes only.
+      </p>
     </div>
   );
 }
