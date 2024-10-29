@@ -272,7 +272,7 @@ const SCENARIOS = {
             </CardHeader>
             <CardContent className="p-6 pt-8">
               <Tabs value={selectedAsset} onValueChange={setSelectedAsset} className="w-full">
-                <TabsList className="grid w-full grid-cols-4">
+                <TabsList className="grid w-full grid-cols-4 bg-gray-800">
                   <TabsTrigger value="BTC - D1">BTC - D1</TabsTrigger>
                   <TabsTrigger value="ETH - D1">ETH - D1</TabsTrigger>
                   <TabsTrigger value="BTC - Options">BTC - Options</TabsTrigger>
