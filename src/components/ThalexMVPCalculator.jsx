@@ -325,7 +325,7 @@ const SCENARIOS = {
                               type="number"
                               value={currentState[asset].volumes[row.group].maker}
                               onChange={(e) => handleVolumeChange(row.group, 'maker', e.target.value)}
-                              disabled={selectedScenario !== 'Base'}
+                              // disabled={selectedScenario !== 'Base'}
                               className="border rounded px-2 py-1 w-16 text-center bg-white"
                             />
                           </td>
