@@ -274,18 +274,18 @@ const SCENARIOS = {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="bg-blue-700 text-white">
-                        <th className="px-4 py-3 text-left rounded-tl-lg">Fee Tier</th>
-                        <th className="px-4 py-3">Taker volume (mln)</th>
-                        <th className="px-4 py-3">Taker fee rate (bps)</th>
-                        <th className="px-4 py-3">Maker volume (mln)</th>
-                        <th className="px-4 py-3">Maker fee rate (bps)</th>
-                        <th className="px-4 py-3">Taker fees</th>
-                        <th className="px-4 py-3">Maker fees</th>
-                        <th className="px-4 py-3">Total fees</th>
-                        <th className="px-4 py-3">Taker fees (% share)</th>
-                        <th className="px-4 py-3">Maker fees (% share)</th>
-                        <th className="px-4 py-3">Taker rewards</th>
-                        <th className="px-4 py-3 rounded-tr-lg">Maker rewards</th>
+                        <th className="px-4 py-3 text-center rounded-tl-lg">Fee Tier</th>
+                        <th className="px-4 py-3 text-center" >Taker volume (mln)</th>
+                        <th className="px-4 py-3 text-center">Taker fee rate (bps)</th>
+                        <th className="px-4 py-3 text-center">Maker volume (mln)</th>
+                        <th className="px-4 py-3 text-center">Maker fee rate (bps)</th>
+                        <th className="px-4 py-3 text-center">Taker fees</th>
+                        <th className="px-4 py-3 text-center">Maker fees</th>
+                        <th className="px-4 py-3 text-center">Total fees</th>
+                        <th className="px-4 py-3 text-center">Taker fees (% share)</th>
+                        <th className="px-4 py-3 text-center">Maker fees (% share)</th>
+                        <th className="px-4 py-3 text-center">Taker rewards</th>
+                        <th className="px-4 py-3 text-center rounded-tr-lg">Maker rewards</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -298,7 +298,7 @@ const SCENARIOS = {
                               value={currentState[asset].volumes[row.group].taker}
                               onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
                               disabled={selectedScenario !== 'Base'}
-                              className="border rounded px-2 py-1 w-16 text-right bg-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-white"
                             />
                           </td>
                           <td className="px-4 py-3">
@@ -307,7 +307,7 @@ const SCENARIOS = {
                               step="0.1"
                               value={currentState[asset].feeTiers[row.group].taker}
                               onChange={(e) => handleFeeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-right bg-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-white"
                             />
                           </td>
                           <td className="px-4 py-3">
@@ -316,7 +316,7 @@ const SCENARIOS = {
                               value={currentState[asset].volumes[row.group].maker}
                               onChange={(e) => handleVolumeChange(row.group, 'maker', e.target.value)}
                               disabled={selectedScenario !== 'Base'}
-                              className="border rounded px-2 py-1 w-16 text-right bg-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-white"
                             />
                           </td>
                           <td className="px-4 py-3">
@@ -325,31 +325,31 @@ const SCENARIOS = {
                               step="0.1"
                               value={currentState[asset].feeTiers[row.group].maker}
                               onChange={(e) => handleFeeChange(row.group, 'maker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-right bg-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-white"
                             />
                           </td>
-                          <td className="px-4 py-3 text-right">${row.takerFees}</td>
-                          <td className="px-4 py-3 text-right">${row.makerFees}</td>
-                          <td className="px-4 py-3 text-right">${row.totalFees}</td>
-                          <td className="px-4 py-3 text-right">{Math.round(row.takerFeeShare)}%</td>
-                          <td className="px-4 py-3 text-right">{Math.round(row.makerFeeShare)}%</td>
-                          <td className="px-4 py-3 text-right">${row.takerRewards}</td>
-                          <td className="px-4 py-3 text-right">${row.makerRewards}</td>
+                          <td className="px-4 py-3 text-center">${row.takerFees}</td>
+                          <td className="px-4 py-3 text-center">${row.makerFees}</td>
+                          <td className="px-4 py-3 text-center">${row.totalFees}</td>
+                          <td className="px-4 py-3 text-center">{Math.round(row.takerFeeShare)}%</td>
+                          <td className="px-4 py-3 text-center">{Math.round(row.makerFeeShare)}%</td>
+                          <td className="px-4 py-3 text-center">${row.takerRewards}</td>
+                          <td className="px-4 py-3 text-center">${row.makerRewards}</td>
                         </tr>
                       ))}
                       <tr className="font-bold bg-blue-700 text-white">
                         <td className="px-4 py-3 rounded-bl-lg">Total</td>
-                        <td className="px-4 py-3 text-right">{metrics.totals.takerVolume.toFixed(1)}</td>
+                        <td className="px-4 py-3 text-center">{metrics.totals.takerVolume.toFixed(1)}</td>
                         <td className="px-4 py-3"></td>
-                        <td className="px-4 py-3 text-right">{metrics.totals.makerVolume.toFixed(1)}</td>
+                        <td className="px-4 py-3 text-center">{metrics.totals.makerVolume.toFixed(1)}</td>
                         <td className="px-4 py-3"></td>
-                        <td className="px-4 py-3 text-right">${metrics.totals.takerFees}</td>
-                        <td className="px-4 py-3 text-right">${metrics.totals.makerFees}</td>
-                        <td className="px-4 py-3 text-right">${metrics.totals.totalFees}</td>
-                        <td className="px-4 py-3 text-right">{Math.round(metrics.totals.takerFees / metrics.totals.totalFees * 100)}%</td>
-                        <td className="px-4 py-3 text-right">{Math.round(metrics.totals.makerFees / metrics.totals.totalFees * 100)}%</td>
-                        <td className="px-4 py-3 text-right">${metrics.totals.takerRewards}</td>
-                        <td className="px-4 py-3 text-right rounded-br-lg">${metrics.totals.makerRewards}</td>
+                        <td className="px-4 py-3 text-center">${metrics.totals.takerFees}</td>
+                        <td className="px-4 py-3 text-center">${metrics.totals.makerFees}</td>
+                        <td className="px-4 py-3 text-center">${metrics.totals.totalFees}</td>
+                        <td className="px-4 py-3 text-center">{Math.round(metrics.totals.takerFees / metrics.totals.totalFees * 100)}%</td>
+                        <td className="px-4 py-3 text-center">{Math.round(metrics.totals.makerFees / metrics.totals.totalFees * 100)}%</td>
+                        <td className="px-4 py-3 text-center">${metrics.totals.takerRewards}</td>
+                        <td className="px-4 py-3 text-center rounded-br-lg">${metrics.totals.makerRewards}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -359,7 +359,7 @@ const SCENARIOS = {
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="bg-blue-700 text-white">
-                          <th className="px-4 py-3 text-left rounded-tl-lg">Fee Tier</th>
+                          <th className="px-4 py-3 text-center rounded-tl-lg">Fee Tier</th>
                           <th className="px-4 py-3 rounded-none text-center">Net Taker Fee (bps)</th>
                           <th className="px-4 py-3 rounded-tr-lg text-center">Net Maker Fee (bps)</th>
                         </tr>
