@@ -291,8 +291,8 @@ const SCENARIOS = {
                     <tbody>
                       {metrics.rows.map((row, idx) => (
                         <tr key={row.group} className={idx % 2 === 0 ? 'bg-white' : 'bg-blue-50'}>
-                          <td className="px-4 py-3 font-medium">{row.group}</td>
-                          <td className="px-4 py-3">
+                          <td className="px-4 py-3 text-center font-medium">{row.group}</td>
+                          <td className="px-4 py-3 text-center">
                             <input
                               type="number"
                               value={currentState[asset].volumes[row.group].taker}
@@ -355,7 +355,7 @@ const SCENARIOS = {
                   </table>
 
                   <div className="mt-12">
-                    <h3 className="font-bold text-lg text-blue-700 mb-4 text-center">Net Fee Rates</h3>
+                    <h3 className="font-bold text-blue-700 mb-4 text-center">Net Fee Rates</h3>
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="bg-blue-700 text-white">
