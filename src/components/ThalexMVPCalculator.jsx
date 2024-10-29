@@ -228,8 +228,8 @@ const SCENARIOS = {
     const metrics = calculateMetrics(selectedAsset);
 
     return (
-        <div className="space-y-4 p-4 bg-gray-50 min-h-screen">
-          <Card className="border-t-4 border-t-blue-700">
+        <div className="space-y-4 p-4 bg-black min-h-screen">
+          <Card className="border-t-4 border-t-blue-700 bg-gray-900">
             <CardHeader className="bg-gradient-to-r from-blue-700 to-blue-700 text-white">
               <CardTitle className="flex justify-between items-center">
                 <span className="text-4xl font-bold">Thalex MVP Calculator</span>
@@ -272,7 +272,7 @@ const SCENARIOS = {
             </CardHeader>
             <CardContent className="p-6 pt-8">
               <Tabs value={selectedAsset} onValueChange={setSelectedAsset} className="w-full">
-                <TabsList className="grid w-full grid-cols-4">
+                <TabsList className="grid w-full grid-cols-4 bg-gray-800">
                   <TabsTrigger value="BTC - D1">BTC - D1</TabsTrigger>
                   <TabsTrigger value="ETH - D1">ETH - D1</TabsTrigger>
                   <TabsTrigger value="BTC - Options">BTC - Options</TabsTrigger>
@@ -281,11 +281,11 @@ const SCENARIOS = {
                 {Object.keys(currentState).map(asset => (
               <TabsContent key={asset} value={asset}>
                 <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
+                  <table className="w-full text-sm text-gray-100">
                     <thead>
                       <tr className="bg-blue-700 text-white">
                         <th className="px-4 py-3 text-center rounded-tl-lg">Fee Tier</th>
-                        <th className="px-4 py-3 text-center" >Taker volume (mln)</th>
+                        <th className="px-4 py-3 text-center">Taker volume (mln)</th>
                         <th className="px-4 py-3 text-center">Taker fee rate (bps)</th>
                         <th className="px-4 py-3 text-center">Maker volume (mln)</th>
                         <th className="px-4 py-3 text-center">Maker fee rate (bps)</th>
@@ -300,7 +300,7 @@ const SCENARIOS = {
                     </thead>
                     <tbody>
                       {metrics.rows.map((row, idx) => (
-                        <tr key={row.group} className={idx % 2 === 0 ? 'bg-white' : 'bg-blue-50'}>
+                        <tr key={row.group} className={idx % 2 === 0 ? 'bg-gray-800' : 'bg-gray-700'}>
                           <td className="px-4 py-3 text-center font-medium">{row.group}</td>
                           <td className="px-4 py-3 text-center">
                             <input
@@ -308,7 +308,7 @@ const SCENARIOS = {
                               value={currentState[asset].volumes[row.group].taker}
                               onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
                               disabled={selectedScenario !== 'Base'}
-                              className="border rounded px-2 py-1 w-16 text-center bg-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3">
@@ -366,7 +366,7 @@ const SCENARIOS = {
 
                   <div className="mt-12">
                     <h3 className="font-bold text-lg text-blue-700 mb-4 text-left">Net Fee Rates</h3>
-                    <table className="w-full text-sm">
+                    <table className="w-full text-sm text-gray-100">
                       <thead>
                         <tr className="bg-blue-700 text-white">
                           <th className="px-4 py-3 text-center rounded-tl-lg">Fee Tier</th>
@@ -376,7 +376,7 @@ const SCENARIOS = {
                       </thead>
                       <tbody>
                         {metrics.rows.map((row, idx) => (
-                          <tr key={row.group} className={idx % 2 === 0 ? 'bg-white' : 'bg-blue-50'}>
+                          <tr key={row.group} className={idx % 2 === 0 ? 'bg-gray-800' : 'bg-gray-700'}>
                             <td className="px-4 py-3 font-medium text-center">{row.group}</td>
                             <td className="px-4 py-3 text-center">{row.effectiveTakerRate.toFixed(2)}</td>
                             <td className="px-4 py-3 text-center">{row.effectiveMakerRate.toFixed(2)}</td>
