@@ -232,7 +232,7 @@ const SCENARIOS = {
           <Card className="border-t-4 border-t-blue-700">
             <CardHeader className="bg-gradient-to-r from-blue-700 to-blue-700 text-white">
               <CardTitle className="flex justify-between items-center">
-                <span className="text-xl font-bold">Thalex MVP Calculator</span>
+                <span className="text-4xl font-bold">Thalex MVP Calculator</span>
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center space-x-2">
                     <span className="text-sm font-medium">Scenario:</span>
@@ -365,7 +365,7 @@ const SCENARIOS = {
                   </table>
 
                   <div className="mt-12">
-                    <h3 className="font-bold text-lg text-blue-700 mb-4 text-center">Net Fee Rates</h3>
+                    <h3 className="font-bold text-lg text-blue-700 mb-4 text-left">Net Fee Rates</h3>
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="bg-blue-700 text-white">
