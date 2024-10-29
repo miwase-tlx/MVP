@@ -117,16 +117,16 @@ const SCENARIOS = {
   };
   
   const SCENARIO_DESCRIPTIONS = {
-    'Base': 'Current market state with no modifications',
-    'Retail growth': 'Simulates shift of 30% MM volume to Retail (20%) and Protail (10%) traders',
-    'Volume growth': 'All volumes increased by 40% while maintaining the same proportions'
+    'Base': "Base scenario with current volumes",
+    'Retail-growth': "Shifts 10% of MM volumes to Protail and 20% of MM volumes to Retail traders",
+    'Volume-growth': "Increases all volumes by 40%"
   };
   
   const ThalexMVPCalculator = () => {
     const [selectedAsset, setSelectedAsset] = useState('BTC - D1');
     const [selectedScenario, setSelectedScenario] = useState('Base');
     const [baseState, setBaseState] = useState(INITIAL_STATE);
-    const [totalRewards] = useState(2050);
+    const [totalRewards, setTotalRewards] = useState(2050);
 
     const currentState = SCENARIOS[selectedScenario](baseState);
 
@@ -263,8 +263,8 @@ const SCENARIOS = {
                     <input
                       type="number"
                       value={totalRewards}
-                      disabled
-                      className="border rounded px-2 py-1 w-20 text-center text-black bg-gray-100"
+                      onChange={(e) => setTotalRewards(Number(e.target.value))}
+                      className="border rounded px-2 py-1 w-32 text-center text-black bg-white"
                     />
                   </div>
                 </div>
