@@ -355,7 +355,7 @@ const SCENARIOS = {
                   </table>
 
                   <div className="mt-12">
-                    <h3 className="font-bold text-blue-700 mb-4 text-center">Net Fee Rates</h3>
+                    <h3 className="font-bold text-lg text-blue-700 mb-4 text-left">Net Fee Rates</h3>
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="bg-blue-700 text-white">
