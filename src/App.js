@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import ThalexMVPCalculator from './components/ThalexMVPCalculator';
 import ErrorBoundary from './components/ErrorBoundary';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -24,10 +25,11 @@ function App() {
       <ErrorBoundary>
         <ThalexMVPCalculator />
       </ErrorBoundary>
-      <p>
+      <Footer />
+      {/* <p>
       This dashboard shows indicative volume for each product, for relevant trading days start and stop at 8am UTC. 
-      Note that the volumes shown on this page can lag behind actual trading volume, and are for indicative purposes only.
-      </p>
+      Note that the volumes shown on this page can lag behind actual trading volume, and are for indicative purposes only. */}
+      {/* </p> */}
     </div>
   );
 }
