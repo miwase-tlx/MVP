@@ -24,7 +24,7 @@ function App() {
       <Footer>
         Testing
 
-      </Footer */>
+      </Footer>
       <ErrorBoundary>
         <ThalexMVPCalculator />
       </ErrorBoundary>
