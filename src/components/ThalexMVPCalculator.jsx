@@ -221,7 +221,7 @@ const SCENARIOS = {
 
     return (
         <div className="space-y-4 p-4 bg-gray-50 min-h-screen">
-          <Card className="border-t-4 border-t-blue-800">
+          <Card className="border-t-4 border-t-blue-500">
             <CardHeader className="bg-gradient-to-r from-blue-900 to-blue-800 text-white">
               <CardTitle className="flex justify-between items-center">
                 <span className="text-xl font-bold">Thalex MVP Calculator</span>
