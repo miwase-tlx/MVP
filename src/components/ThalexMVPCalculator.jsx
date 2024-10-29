@@ -273,7 +273,7 @@ const SCENARIOS = {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="bg-blue-500 text-white">
+                      <tr className="bg-blue-700 text-white">
                         <th className="px-4 py-3 text-left rounded-tl-lg">Fee Tier</th>
                         <th className="px-4 py-3">Taker volume (mln)</th>
                         <th className="px-4 py-3">Taker fee rate (bps)</th>
