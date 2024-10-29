@@ -228,8 +228,8 @@ const SCENARIOS = {
     const metrics = calculateMetrics(selectedAsset);
 
     return (
-        <div className="space-y-4 p-4 bg-gray-50 min-h-screen">
-          <Card className="border-t-4 border-t-blue-700">
+        <div className="space-y-4 p-4 bg-black min-h-screen">
+          <Card className="border-t-4 border-t-blue-700 bg-black">
             <CardHeader className="bg-gradient-to-r from-blue-700 to-blue-700 text-white">
               <CardTitle className="flex justify-between items-start">
                 <div>
@@ -276,9 +276,9 @@ const SCENARIOS = {
                 </div>
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-6 pt-8">
+            <CardContent className="p-6 pt-8 bg-black text-white">
               <Tabs value={selectedAsset} onValueChange={setSelectedAsset} className="w-full">
-                <TabsList className="grid w-full grid-cols-4 bg-gray-300">
+                <TabsList className="grid w-full grid-cols-4 bg-gray-800">
                   <TabsTrigger value="BTC - D1">BTC - D1</TabsTrigger>
                   <TabsTrigger value="ETH - D1">ETH - D1</TabsTrigger>
                   <TabsTrigger value="BTC - Options">BTC - Options</TabsTrigger>
@@ -306,15 +306,14 @@ const SCENARIOS = {
                     </thead>
                     <tbody>
                       {metrics.rows.map((row, idx) => (
-                        <tr key={row.group} className={idx % 2 === 0 ? 'bg-white' : 'bg-blue-50'}>
-                          <td className="px-4 py-3 text-center font-medium">{row.group}</td>
+                        <tr key={row.group} className={idx % 2 === 0 ? 'bg-black' : 'bg-gray-900'}>
+                          <td className="px-4 py-3 text-center font-medium text-white">{row.group}</td>
                           <td className="px-4 py-3 text-center">
                             <input
                               type="number"
                               value={currentState[asset].volumes[row.group].taker}
                               onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
-                              // disabled={selectedScenario !== 'Base'}
-                              className="border rounded px-2 py-1 w-16 text-center bg-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3">
@@ -323,7 +322,7 @@ const SCENARIOS = {
                               step="0.1"
                               value={currentState[asset].feeTiers[row.group].taker}
                               onChange={(e) => handleFeeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3">
@@ -331,8 +330,7 @@ const SCENARIOS = {
                               type="number"
                               value={currentState[asset].volumes[row.group].maker}
                               onChange={(e) => handleVolumeChange(row.group, 'maker', e.target.value)}
-                              // disabled={selectedScenario !== 'Base'}
-                              className="border rounded px-2 py-1 w-16 text-center bg-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3">
@@ -341,7 +339,7 @@ const SCENARIOS = {
                               step="0.1"
                               value={currentState[asset].feeTiers[row.group].maker}
                               onChange={(e) => handleFeeChange(row.group, 'maker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3 text-center">${row.takerFees}</td>
@@ -382,10 +380,10 @@ const SCENARIOS = {
                       </thead>
                       <tbody>
                         {metrics.rows.map((row, idx) => (
-                          <tr key={row.group} className={idx % 2 === 0 ? 'bg-white' : 'bg-blue-50'}>
-                            <td className="px-4 py-3 font-medium text-center">{row.group}</td>
-                            <td className="px-4 py-3 text-center">{row.effectiveTakerRate.toFixed(2)}</td>
-                            <td className="px-4 py-3 text-center">{row.effectiveMakerRate.toFixed(2)}</td>
+                          <tr key={row.group} className={idx % 2 === 0 ? 'bg-black' : 'bg-gray-900'}>
+                            <td className="px-4 py-3 font-medium text-center text-white">{row.group}</td>
+                            <td className="px-4 py-3 text-center text-white">{row.effectiveTakerRate.toFixed(2)}</td>
+                            <td className="px-4 py-3 text-center text-white">{row.effectiveMakerRate.toFixed(2)}</td>
                           </tr>
                         ))}
                       </tbody>
