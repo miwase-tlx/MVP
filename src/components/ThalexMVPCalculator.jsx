@@ -337,7 +337,7 @@ const SCENARIOS = {
                           <td className="px-4 py-3 text-right">${row.makerRewards}</td>
                         </tr>
                       ))}
-                      <tr className="font-bold bg-blue-900 text-white">
+                      <tr className="font-bold bg-blue-700 text-white">
                         <td className="px-4 py-3 rounded-bl-lg">Total</td>
                         <td className="px-4 py-3 text-right">{metrics.totals.takerVolume.toFixed(1)}</td>
                         <td className="px-4 py-3"></td>
@@ -355,10 +355,10 @@ const SCENARIOS = {
                   </table>
 
                   <div className="mt-12">
-                    <h3 className="font-bold text-lg text-blue-900 mb-4">Net Fee Rates</h3>
+                    <h3 className="font-bold text-lg text-blue-700 mb-4">Net Fee Rates</h3>
                     <table className="w-full text-sm">
                       <thead>
-                        <tr className="bg-blue-900 text-white">
+                        <tr className="bg-blue-700 text-white">
                           <th className="px-4 py-3 text-left rounded-tl-lg">Fee Tier</th>
                           <th className="px-4 py-3 rounded-none text-center">Net Taker Fee (bps)</th>
                           <th className="px-4 py-3 rounded-tr-lg text-center">Net Maker Fee (bps)</th>
