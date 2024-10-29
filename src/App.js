@@ -21,6 +21,10 @@ function App() {
           Learn React
         </a>
       </header> */}
+      <Footer>
+        Testing
+
+      </Footer */>
       <ErrorBoundary>
         <ThalexMVPCalculator />
       </ErrorBoundary>
