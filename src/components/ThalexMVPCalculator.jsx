@@ -246,18 +246,20 @@ const SCENARIOS = {
                       ))}
                     </select>
                     <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <Info className="h-4 w-4" />
+                      <Tooltip delayDuration={0}>
+                        <TooltipTrigger asChild>
+                          <button type="button" className="hover:opacity-80">
+                            <Info className="h-4 w-4" />
+                          </button>
                         </TooltipTrigger>
-                        <TooltipContent>
+                        <TooltipContent side="right" className="bg-white text-black p-2 rounded shadow-lg">
                           <p className="w-64">{SCENARIO_DESCRIPTIONS[selectedScenario]}</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
                   </div>
                   <div className="flex items-center space-x-2 bg-white/10 rounded-lg px-4 py-2">
-                    <span className="text-sm font-medium">Total Rewards ($):</span>
+                    <span className="text-sm font-medium text-center">Total Rewards ($):</span>
                     <input
                       type="number"
                       value={totalRewards}
