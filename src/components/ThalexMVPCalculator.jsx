@@ -221,7 +221,7 @@ const SCENARIOS = {
 
     return (
         <div className="space-y-4 p-4 bg-gray-50 min-h-screen">
-          <Card className="border-t-4 border-t-blue-500">
+          <Card className="border-t-4 border-t-blue-800">
             <CardHeader className="bg-gradient-to-r from-blue-900 to-blue-800 text-white">
               <CardTitle className="flex justify-between items-center">
                 <span className="text-xl font-bold">Thalex MVP Calculator</span>
@@ -273,7 +273,7 @@ const SCENARIOS = {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="bg-blue-900 text-white">
+                      <tr className="bg-blue-500 text-white">
                         <th className="px-4 py-3 text-left rounded-tl-lg">Fee Tier</th>
                         <th className="px-4 py-3">Taker volume (mln)</th>
                         <th className="px-4 py-3">Taker fee rate (bps)</th>
