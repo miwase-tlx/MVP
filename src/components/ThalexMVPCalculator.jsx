@@ -122,36 +122,6 @@ const SCENARIOS = {
     'Volume growth': "Increases all volumes by 40%"
   };
   
-  const NumberInput = ({ value, onChange, step = 1, className = "" }) => {
-    const handleIncrement = () => onChange(Number(value) + step);
-    const handleDecrement = () => onChange(Number(value) - step);
-
-    return (
-      <div className="flex items-center space-x-1">
-        <button
-          type="button"
-          onClick={handleDecrement}
-          className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-l text-white"
-        >
-          -
-        </button>
-        <input
-          type="number"
-          value={value}
-          onChange={(e) => onChange(Number(e.target.value))}
-          className={`border rounded-none px-2 py-1 w-16 text-center bg-gray-800 text-white ${className}`}
-        />
-        <button
-          type="button"
-          onClick={handleIncrement}
-          className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-r text-white"
-        >
-          +
-        </button>
-      </div>
-    );
-  };
-  
   const ThalexMVPCalculator = () => {
     const [selectedAsset, setSelectedAsset] = useState('BTC - D1');
     const [selectedScenario, setSelectedScenario] = useState('Base');
@@ -338,44 +308,38 @@ const SCENARIOS = {
                       {metrics.rows.map((row, idx) => (
                         <tr key={row.group} className={idx % 2 === 0 ? 'bg-black' : 'bg-gray-900'}>
                           <td className="px-4 py-3 text-center font-medium text-white">{row.group}</td>
-                          <td className="px-4 py-3">
-                            <div className="number-input-wrapper">
-                              <input
-                                type="number"
-                                value={currentState[asset].volumes[row.group].taker}
-                                onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
-                                className="border rounded-l px-2 py-1 w-16 text-center bg-gray-800 text-white"
-                              />
-                              <div className="number-spinners">
-                                <button 
-                                  className="number-spinner rounded-tr"
-                                  onClick={() => handleVolumeChange(row.group, 'taker', Number(currentState[asset].volumes[row.group].taker) + 1)}
-                                >▲</button>
-                                <button 
-                                  className="number-spinner rounded-br"
-                                  onClick={() => handleVolumeChange(row.group, 'taker', Number(currentState[asset].volumes[row.group].taker) - 1)}
-                                >▼</button>
-                              </div>
-                            </div>
+                          <td className="px-4 py-3 text-center">
+                            <input
+                              type="number"
+                              value={currentState[asset].volumes[row.group].taker}
+                              onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                            />
                           </td>
                           <td className="px-4 py-3">
-                            <NumberInput
+                            <input
+                              type="number"
+                              step="0.1"
                               value={currentState[asset].feeTiers[row.group].taker}
-                              onChange={(value) => handleFeeChange(row.group, 'taker', value)}
-                              step={0.1}
+                              onChange={(e) => handleFeeChange(row.group, 'taker', e.target.value)}
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3">
-                            <NumberInput
+                            <input
+                              type="number"
                               value={currentState[asset].volumes[row.group].maker}
-                              onChange={(value) => handleVolumeChange(row.group, 'maker', value)}
+                              onChange={(e) => handleVolumeChange(row.group, 'maker', e.target.value)}
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3">
-                            <NumberInput
+                            <input
+                              type="number"
+                              step="0.1"
                               value={currentState[asset].feeTiers[row.group].maker}
-                              onChange={(value) => handleFeeChange(row.group, 'maker', value)}
-                              step={0.1}
+                              onChange={(e) => handleFeeChange(row.group, 'maker', e.target.value)}
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3 text-center">${row.takerFees}</td>
