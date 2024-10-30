@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './ui/tabs';
-import { Info } from 'lucide-react';
+import { Info, ChevronUp, ChevronDown } from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
@@ -161,6 +161,20 @@ const SCENARIOS = {
         }
       }));
     };
+
+    const adjustValue = (group, type, isVolume, increment) => {
+      const step = isVolume ? 0.1 : 0.1;
+      const currentValue = isVolume 
+        ? currentState[selectedAsset].volumes[group][type]
+        : currentState[selectedAsset].feeTiers[group][type];
+      const newValue = Math.max(0, currentValue + (increment ? step : -step));
+      
+      if (isVolume) {
+        handleVolumeChange(group, type, newValue);
+      } else {
+        handleFeeChange(group, type, newValue);
+      }
+    };
   
     const calculateMetrics = (asset) => {
       const { feeTiers, volumes } = currentState[asset];
@@ -226,6 +240,31 @@ const SCENARIOS = {
     };
   
     const metrics = calculateMetrics(selectedAsset);
+
+    const InputWithButtons = ({ value, onChange, onIncrement, onDecrement }) => (
+      <div className="flex items-center space-x-1">
+        <div className="flex flex-col">
+          <button
+            onClick={onIncrement}
+            className="bg-blue-700 hover:bg-blue-600 text-white rounded-t px-1 py-0.5"
+          >
+            <ChevronUp className="h-3 w-3" />
+          </button>
+          <button
+            onClick={onDecrement}
+            className="bg-blue-700 hover:bg-blue-600 text-white rounded-b px-1 py-0.5"
+          >
+            <ChevronDown className="h-3 w-3" />
+          </button>
+        </div>
+        <input
+          type="number"
+          value={value}
+          onChange={onChange}
+          className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+        />
+      </div>
+    );
 
     return (
         <div className="space-y-4 p-4 bg-black min-h-screen">
@@ -309,37 +348,35 @@ const SCENARIOS = {
                         <tr key={row.group} className={idx % 2 === 0 ? 'bg-black' : 'bg-gray-900'}>
                           <td className="px-4 py-3 text-center font-medium text-white">{row.group}</td>
                           <td className="px-4 py-3 text-center">
-                            <input
-                              type="number"
+                            <InputWithButtons
                               value={currentState[asset].volumes[row.group].taker}
                               onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              onIncrement={() => adjustValue(row.group, 'taker', true, true)}
+                              onDecrement={() => adjustValue(row.group, 'taker', true, false)}
                             />
                           </td>
                           <td className="px-4 py-3">
-                            <input
-                              type="number"
-                              step="0.1"
+                            <InputWithButtons
                               value={currentState[asset].feeTiers[row.group].taker}
                               onChange={(e) => handleFeeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              onIncrement={() => adjustValue(row.group, 'taker', false, true)}
+                              onDecrement={() => adjustValue(row.group, 'taker', false, false)}
                             />
                           </td>
                           <td className="px-4 py-3">
-                            <input
-                              type="number"
+                            <InputWithButtons
                               value={currentState[asset].volumes[row.group].maker}
                               onChange={(e) => handleVolumeChange(row.group, 'maker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              onIncrement={() => adjustValue(row.group, 'maker', true, true)}
+                              onDecrement={() => adjustValue(row.group, 'maker', true, false)}
                             />
                           </td>
                           <td className="px-4 py-3">
-                            <input
-                              type="number"
-                              step="0.1"
+                            <InputWithButtons
                               value={currentState[asset].feeTiers[row.group].maker}
                               onChange={(e) => handleFeeChange(row.group, 'maker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              onIncrement={() => adjustValue(row.group, 'maker', false, true)}
+                              onDecrement={() => adjustValue(row.group, 'maker', false, false)}
                             />
                           </td>
                           <td className="px-4 py-3 text-center">${row.takerFees}</td>
@@ -369,7 +406,6 @@ const SCENARIOS = {
                   </table>
 
                   <div className="mt-12">
-                    {/* <h3 className="font-bold text-lg text-white mb-4 text-left">Net Fee Rates</h3> */}
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="bg-blue-700 text-white">
