@@ -122,6 +122,35 @@ const SCENARIOS = {
     'Volume growth': "Increases all volumes by 40%"
   };
   
+  const NumberInput = ({ value, onChange, step = 1, min = 0 }) => {
+    return (
+      <div className="flex items-center space-x-1">
+        <input
+          type="number"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          step={step}
+          min={min}
+          className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+        />
+        <div className="flex flex-col">
+          <button
+            onClick={() => onChange(Number(value) + step)}
+            className="bg-blue-700 hover:bg-blue-600 text-white px-2 rounded-t"
+          >
+            ▲
+          </button>
+          <button
+            onClick={() => onChange(Math.max(Number(value) - step, min))}
+            className="bg-blue-700 hover:bg-blue-600 text-white px-2 rounded-b"
+          >
+            ▼
+          </button>
+        </div>
+      </div>
+    );
+  };
+  
   const ThalexMVPCalculator = () => {
     const [selectedAsset, setSelectedAsset] = useState('BTC - D1');
     const [selectedScenario, setSelectedScenario] = useState('Base');
@@ -309,37 +338,29 @@ const SCENARIOS = {
                         <tr key={row.group} className={idx % 2 === 0 ? 'bg-black' : 'bg-gray-900'}>
                           <td className="px-4 py-3 text-center font-medium text-white">{row.group}</td>
                           <td className="px-4 py-3 text-center">
-                            <input
-                              type="number"
+                            <NumberInput
                               value={currentState[asset].volumes[row.group].taker}
-                              onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              onChange={(value) => handleVolumeChange(row.group, 'taker', value)}
                             />
                           </td>
                           <td className="px-4 py-3">
-                            <input
-                              type="number"
-                              step="0.1"
+                            <NumberInput
                               value={currentState[asset].feeTiers[row.group].taker}
-                              onChange={(e) => handleFeeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              onChange={(value) => handleFeeChange(row.group, 'taker', value)}
+                              step={0.1}
                             />
                           </td>
                           <td className="px-4 py-3">
-                            <input
-                              type="number"
+                            <NumberInput
                               value={currentState[asset].volumes[row.group].maker}
-                              onChange={(e) => handleVolumeChange(row.group, 'maker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              onChange={(value) => handleVolumeChange(row.group, 'maker', value)}
                             />
                           </td>
                           <td className="px-4 py-3">
-                            <input
-                              type="number"
-                              step="0.1"
+                            <NumberInput
                               value={currentState[asset].feeTiers[row.group].maker}
-                              onChange={(e) => handleFeeChange(row.group, 'maker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              onChange={(value) => handleFeeChange(row.group, 'maker', value)}
+                              step={0.1}
                             />
                           </td>
                           <td className="px-4 py-3 text-center">${row.takerFees}</td>
