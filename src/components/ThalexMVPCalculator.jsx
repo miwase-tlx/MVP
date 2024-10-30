@@ -228,7 +228,7 @@ const SCENARIOS = {
     const metrics = calculateMetrics(selectedAsset);
 
     const adjustValue = (group, type, isVolume, increment) => {
-      const step = isVolume ? 1.0 : 0.5;
+      const step = 1.0;
       const currentValue = isVolume 
         ? currentState[selectedAsset].volumes[group][type]
         : currentState[selectedAsset].feeTiers[group][type];
