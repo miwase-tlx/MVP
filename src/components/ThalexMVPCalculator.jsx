@@ -309,38 +309,94 @@ const SCENARIOS = {
                         <tr key={row.group} className={idx % 2 === 0 ? 'bg-black' : 'bg-gray-900'}>
                           <td className="px-4 py-3 text-center font-medium text-white">{row.group}</td>
                           <td className="px-4 py-3 text-center">
-                            <input
-                              type="number"
-                              value={currentState[asset].volumes[row.group].taker}
-                              onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
-                            />
+                            <div className="flex items-center justify-center space-x-1">
+                              <button
+                                onClick={() => handleVolumeChange(row.group, 'taker', currentState[asset].volumes[row.group].taker - 0.1)}
+                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-l text-white"
+                              >
+                                -
+                              </button>
+                              <input
+                                type="number"
+                                value={currentState[asset].volumes[row.group].taker}
+                                onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
+                                className="border rounded-none px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              />
+                              <button
+                                onClick={() => handleVolumeChange(row.group, 'taker', currentState[asset].volumes[row.group].taker + 0.1)}
+                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-r text-white"
+                              >
+                                +
+                              </button>
+                            </div>
                           </td>
                           <td className="px-4 py-3">
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={currentState[asset].feeTiers[row.group].taker}
-                              onChange={(e) => handleFeeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
-                            />
+                            <div className="flex items-center justify-center space-x-1">
+                              <button
+                                onClick={() => handleFeeChange(row.group, 'taker', currentState[asset].feeTiers[row.group].taker - 0.1)}
+                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-l text-white"
+                              >
+                                -
+                              </button>
+                              <input
+                                type="number"
+                                step="0.1"
+                                value={currentState[asset].feeTiers[row.group].taker}
+                                onChange={(e) => handleFeeChange(row.group, 'taker', e.target.value)}
+                                className="border rounded-none px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              />
+                              <button
+                                onClick={() => handleFeeChange(row.group, 'taker', currentState[asset].feeTiers[row.group].taker + 0.1)}
+                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-r text-white"
+                              >
+                                +
+                              </button>
+                            </div>
                           </td>
                           <td className="px-4 py-3">
-                            <input
-                              type="number"
-                              value={currentState[asset].volumes[row.group].maker}
-                              onChange={(e) => handleVolumeChange(row.group, 'maker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
-                            />
+                            <div className="flex items-center justify-center space-x-1">
+                              <button
+                                onClick={() => handleVolumeChange(row.group, 'maker', currentState[asset].volumes[row.group].maker - 0.1)}
+                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-l text-white"
+                              >
+                                -
+                              </button>
+                              <input
+                                type="number"
+                                value={currentState[asset].volumes[row.group].maker}
+                                onChange={(e) => handleVolumeChange(row.group, 'maker', e.target.value)}
+                                className="border rounded-none px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              />
+                              <button
+                                onClick={() => handleVolumeChange(row.group, 'maker', currentState[asset].volumes[row.group].maker + 0.1)}
+                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-r text-white"
+                              >
+                                +
+                              </button>
+                            </div>
                           </td>
                           <td className="px-4 py-3">
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={currentState[asset].feeTiers[row.group].maker}
-                              onChange={(e) => handleFeeChange(row.group, 'maker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
-                            />
+                            <div className="flex items-center justify-center space-x-1">
+                              <button
+                                onClick={() => handleFeeChange(row.group, 'maker', currentState[asset].feeTiers[row.group].maker - 0.1)}
+                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-l text-white"
+                              >
+                                -
+                              </button>
+                              <input
+                                type="number"
+                                step="0.1"
+                                value={currentState[asset].feeTiers[row.group].maker}
+                                onChange={(e) => handleFeeChange(row.group, 'maker', e.target.value)}
+                                className="border rounded-none px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              />
+                              <button
+                                onClick={() => handleFeeChange(row.group, 'maker', currentState[asset].feeTiers[row.group].maker + 0.1)}
+                                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-r text-white"
+                              >
+                                +
+                              </button>
+                            </div>
                           </td>
                           <td className="px-4 py-3 text-center">${row.takerFees}</td>
                           <td className="px-4 py-3 text-center">${row.makerFees}</td>
