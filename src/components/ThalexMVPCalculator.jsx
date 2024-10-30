@@ -338,11 +338,25 @@ const SCENARIOS = {
                       {metrics.rows.map((row, idx) => (
                         <tr key={row.group} className={idx % 2 === 0 ? 'bg-black' : 'bg-gray-900'}>
                           <td className="px-4 py-3 text-center font-medium text-white">{row.group}</td>
-                          <td className="px-4 py-3 text-center">
-                            <NumberInput
-                              value={currentState[asset].volumes[row.group].taker}
-                              onChange={(value) => handleVolumeChange(row.group, 'taker', value)}
-                            />
+                          <td className="px-4 py-3">
+                            <div className="number-input-wrapper">
+                              <input
+                                type="number"
+                                value={currentState[asset].volumes[row.group].taker}
+                                onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
+                                className="border rounded-l px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              />
+                              <div className="number-spinners">
+                                <button 
+                                  className="number-spinner rounded-tr"
+                                  onClick={() => handleVolumeChange(row.group, 'taker', Number(currentState[asset].volumes[row.group].taker) + 1)}
+                                >▲</button>
+                                <button 
+                                  className="number-spinner rounded-br"
+                                  onClick={() => handleVolumeChange(row.group, 'taker', Number(currentState[asset].volumes[row.group].taker) - 1)}
+                                >▼</button>
+                              </div>
+                            </div>
                           </td>
                           <td className="px-4 py-3">
                             <NumberInput
