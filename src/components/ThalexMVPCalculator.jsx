@@ -313,7 +313,7 @@ const SCENARIOS = {
                               type="number"
                               value={currentState[asset].volumes[row.group].taker}
                               onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 bg-gray-800 text-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3">

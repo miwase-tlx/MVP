@@ -38,6 +38,14 @@
 }
 
 input[type="number"] {
-  text-align: left;
-  padding-right: 1rem;
+  text-align: center;  /* Keep text centered */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+  position: absolute;  /* Position the spinner absolutely */
+  right: 4px;         /* Distance from right edge */
+  top: 50%;           /* Center vertically */
+  transform: translateY(-50%);  /* Perfect vertical centering */
 }
