@@ -313,10 +313,10 @@ const SCENARIOS = {
                               type="number"
                               value={currentState[asset].volumes[row.group].taker}
                               onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white mx-auto block"
                             />
                           </td>
-                          <td className="px-4 py-3">
+                          <td className="px-4 py-3 text-center">
                             <input
                               type="number"
                               step="0.1"
@@ -325,7 +325,7 @@ const SCENARIOS = {
                               className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
-                          <td className="px-4 py-3">
+                          <td className="px-4 py-3 text-center">
                             <input
                               type="number"
                               value={currentState[asset].volumes[row.group].maker}
@@ -333,7 +333,7 @@ const SCENARIOS = {
                               className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
-                          <td className="px-4 py-3">
+                          <td className="px-4 py-3 text-center">
                             <input
                               type="number"
                               step="0.1"
