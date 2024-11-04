@@ -19,10 +19,10 @@ const INITIAL_STATE = {
       'You': { taker: 0.0, maker: 0.0 }
     },
     volumes: {
-      'MM - D1': { taker: 4.5, maker: 6.5 },
-      'MM - Options': { taker: 13.2, maker: 0.3 },
-      'Protail': { taker: 1.0, maker: 10.9 },
-      'Retail': { taker: 0.0, maker: 0.0 },
+      'MM - D1': { taker: 6, maker: 6 },
+      'MM - Options': { taker: 6, maker: 6 },
+      'Protail': { taker: 2.5, maker: 2.5 },
+      'Retail': { taker: 0.5, maker: 0.5 },
       'You': { taker: 0.0, maker: 0.0 }
     }
   },
@@ -35,10 +35,10 @@ const INITIAL_STATE = {
       'You': { taker: 0.0, maker: 0.0 }
     },
     volumes: {
-      'MM - D1': { taker: 4.5, maker: 6.5 },
-      'MM - Options': { taker: 13.2, maker: 0.3 },
-      'Protail': { taker: 1.0, maker: 10.9 },
-      'Retail': { taker: 0.0, maker: 0.0 },
+      'MM - D1': { taker: 6, maker: 6 },
+      'MM - Options': { taker: 6, maker: 6 },
+      'Protail': { taker: 2.5, maker: 2.5 },
+      'Retail': { taker: 0.5, maker: 0.5 },
       'You': { taker: 0.0, maker: 0.0 }
     }
   },
@@ -51,10 +51,10 @@ const INITIAL_STATE = {
       'You': { taker: 0.0, maker: 0.0 }
     },
     volumes: {
-      'MM - D1': { taker: 4.5, maker: 6.5 },
-      'MM - Options': { taker: 13.2, maker: 0.3 },
-      'Protail': { taker: 1.0, maker: 10.9 },
-      'Retail': { taker: 0.0, maker: 0.0 },
+      'MM - D1': { taker: 6, maker: 6 },
+      'MM - Options': { taker: 6, maker: 6 },
+      'Protail': { taker: 2.5, maker: 2.5 },
+      'Retail': { taker: 0.5, maker: 0.5 },
       'You': { taker: 0.0, maker: 0.0 }
     }
   },
@@ -67,10 +67,10 @@ const INITIAL_STATE = {
       'You': { taker: 0.0, maker: 0.0 }
     },
     volumes: {
-      'MM - D1': { taker: 4.5, maker: 6.5 },
-      'MM - Options': { taker: 13.2, maker: 0.3 },
-      'Protail': { taker: 1.0, maker: 10.9 },
-      'Retail': { taker: 0.0, maker: 0.0 },
+      'MM - D1': { taker: 6, maker: 6 },
+      'MM - Options': { taker: 6, maker: 6 },
+      'Protail': { taker: 2.5, maker: 2.5 },
+      'Retail': { taker: 0.5, maker: 0.5 },
       'You': { taker: 0.0, maker: 0.0 }
     }
   }
