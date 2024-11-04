@@ -313,7 +313,7 @@ const SCENARIOS = {
                               type="number"
                               value={currentState[asset].volumes[row.group].taker}
                               onChange={(e) => handleVolumeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-24 text-center bg-gray-800 text-white"
+                              className="border rounded px-4 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3">
@@ -322,7 +322,7 @@ const SCENARIOS = {
                               step="0.1"
                               value={currentState[asset].feeTiers[row.group].taker}
                               onChange={(e) => handleFeeChange(row.group, 'taker', e.target.value)}
-                              className="border rounded px-2 py-1 w-24 text-center bg-gray-800 text-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3">
@@ -330,7 +330,7 @@ const SCENARIOS = {
                               type="number"
                               value={currentState[asset].volumes[row.group].maker}
                               onChange={(e) => handleVolumeChange(row.group, 'maker', e.target.value)}
-                              className="border rounded px-2 py-1 w-24 text-center bg-gray-800 text-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3">
@@ -339,7 +339,7 @@ const SCENARIOS = {
                               step="0.1"
                               value={currentState[asset].feeTiers[row.group].maker}
                               onChange={(e) => handleFeeChange(row.group, 'maker', e.target.value)}
-                              className="border rounded px-2 py-1 w-24 text-center bg-gray-800 text-white"
+                              className="border rounded px-2 py-1 w-16 text-center bg-gray-800 text-white"
                             />
                           </td>
                           <td className="px-4 py-3 text-center">${row.takerFees}</td>
@@ -369,7 +369,6 @@ const SCENARIOS = {
                   </table>
 
                   <div className="mt-12">
-                    {/* <h3 className="font-bold text-lg text-white mb-4 text-left">Net Fee Rates</h3> */}
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="bg-blue-700 text-white">
