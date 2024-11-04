@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+input[type="number"] {
+  text-align: left;
+  padding-right: 1rem;
+}
