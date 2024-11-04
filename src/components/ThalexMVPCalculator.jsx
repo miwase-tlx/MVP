@@ -19,8 +19,8 @@ const INITIAL_STATE = {
       'You': { taker: 0.0, maker: 0.0 }
     },
     volumes: {
-      'MM - D1': { taker: 6, maker: 6 },
-      'MM - Options': { taker: 6, maker: 6 },
+      'MM - D1': { taker: 8, maker: 8 },
+      'MM - Options': { taker: 4, maker: 4 },
       'Protail': { taker: 2.5, maker: 2.5 },
       'Retail': { taker: 0.5, maker: 0.5 },
       'You': { taker: 0.0, maker: 0.0 }
@@ -35,8 +35,8 @@ const INITIAL_STATE = {
       'You': { taker: 0.0, maker: 0.0 }
     },
     volumes: {
-      'MM - D1': { taker: 6, maker: 6 },
-      'MM - Options': { taker: 6, maker: 6 },
+      'MM - D1': { taker: 8, maker: 8 },
+      'MM - Options': { taker: 4, maker: 4 },
       'Protail': { taker: 2.5, maker: 2.5 },
       'Retail': { taker: 0.5, maker: 0.5 },
       'You': { taker: 0.0, maker: 0.0 }
@@ -51,8 +51,8 @@ const INITIAL_STATE = {
       'You': { taker: 0.0, maker: 0.0 }
     },
     volumes: {
-      'MM - D1': { taker: 6, maker: 6 },
-      'MM - Options': { taker: 6, maker: 6 },
+      'MM - D1': { taker: 8, maker: 8 },
+      'MM - Options': { taker: 4, maker: 4 },
       'Protail': { taker: 2.5, maker: 2.5 },
       'Retail': { taker: 0.5, maker: 0.5 },
       'You': { taker: 0.0, maker: 0.0 }
@@ -67,8 +67,8 @@ const INITIAL_STATE = {
       'You': { taker: 0.0, maker: 0.0 }
     },
     volumes: {
-      'MM - D1': { taker: 6, maker: 6 },
-      'MM - Options': { taker: 6, maker: 6 },
+      'MM - D1': { taker: 8, maker: 8 },
+      'MM - Options': { taker: 4, maker: 4 },
       'Protail': { taker: 2.5, maker: 2.5 },
       'Retail': { taker: 0.5, maker: 0.5 },
       'You': { taker: 0.0, maker: 0.0 }
