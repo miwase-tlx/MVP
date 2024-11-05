@@ -44,8 +44,8 @@ const INITIAL_STATE = {
   },
   'BTC - Options': {
     feeTiers: {
-      'MM - D1': { taker: 0.2, maker: 0.2 },
-      'MM - Options': { taker: 0.6, maker: 0.6 },
+      'MM - D1': { taker: 0.6, maker: 0.6 },
+      'MM - Options': { taker: 0.2, maker: 0.2 },
       'Protail': { taker: 1.0, maker: 1.0 },
       'Retail': { taker: 2.5, maker: 2.5 },
       'You': { taker: 0.0, maker: 0.0 }
@@ -60,8 +60,8 @@ const INITIAL_STATE = {
   },
   'ETH - Options': {
     feeTiers: {
-      'MM - D1': { taker: 0.2, maker: 0.2 },
-      'MM - Options': { taker: 0.6, maker: 0.6 },
+      'MM - D1': { taker: 0.6, maker: 0.6 },
+      'MM - Options': { taker: 0.2, maker: 0.2 },
       'Protail': { taker: 1.0, maker: 1.0 },
       'Retail': { taker: 2.5, maker: 2.5 },
       'You': { taker: 0.0, maker: 0.0 }
